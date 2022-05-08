@@ -337,7 +337,7 @@
 		font-size: 16px;
 		font-weight: 600;
 		letter-spacing: 0.96px;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 	}
 	span {
 		color: #aaaaaa;
@@ -352,14 +352,21 @@
             
             span {
                 display:block;
-                // max-height: 0;
-                // overflow-y: hidden;
+                max-height: 0;
+                overflow-y: hidden;
+                -webkit-transition: max-height 1s;
+                -moz-transition: max-height 1s;
+                transition: max-height 1s;
                 color: #aaaaaa;
 		        font-size: 12px;
                 
             }
         }
     }
+}
+
+.history-item:hover .history-desc .history-desc-cell span {
+    max-height: 100%;
 }
 
 
