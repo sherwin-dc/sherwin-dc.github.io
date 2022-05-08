@@ -303,16 +303,24 @@
 }
 
 .history-item {
-	display: table;
+    line-height: 14px;
+	// display: table-row;
 	font-family: $open-sans;
 	padding-left: 32px;
+	padding-right: 16px;
 	margin-bottom: 20px;
 	width: 100%;
-	& > * {
-		display: table-cell;
+	// & > * {
+	// 	display: table-cell;
+	// 	vertical-align: middle;
+	// }
+    .history-text {
+        display: table-cell;
 		vertical-align: middle;
-	}
+    }
 	.history-icon {
+        display: table-cell;
+		vertical-align: middle;
 	  	padding-right: 25px;
 	  	position: relative;
 	  	width: 66px;
@@ -335,7 +343,25 @@
 		color: #aaaaaa;
 		font-size: 12px;
 	}
+
+    .history-desc {
+        // display: table-row
+
+        .history-desc-cell {
+            // display: table-cell;
+            
+            span {
+                display:block;
+                // max-height: 0;
+                // overflow-y: hidden;
+                color: #aaaaaa;
+		        font-size: 12px;
+                
+            }
+        }
+    }
 }
+
 
 .history-hex {
 	display: block;
@@ -354,12 +380,12 @@
 	}
 	&::before {
 		bottom: 100%;
-		border-bottom: 19.05px solid #293342;
+		border-bottom: 0px solid #293342;
 	}
 	&::after {
 		top: 100%;
 		width: 0;
-		border-top: 19.05px solid #293342;
+		border-top: 0px solid #293342;
 	}
 }
 

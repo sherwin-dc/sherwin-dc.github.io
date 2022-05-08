@@ -159,7 +159,7 @@ textarea, label {
   margin-left: 0;
   margin-right: 0;
 }
-.no-gutter > [class^="col-"] {
+.no-gutter > [class^=col-] {
   padding-left: 0;
   padding-right: 0;
 }
@@ -369,7 +369,7 @@ textarea, label {
 .hexagon-item {
   cursor: pointer;
   width: 200px;
-  height: 173.20508px;
+  height: 173.2050807569px;
   float: left;
   margin-left: -29px;
   z-index: 0;
@@ -433,7 +433,7 @@ textarea, label {
   top: 0;
   left: 50px;
   width: 100px;
-  height: 173.20508px;
+  height: 173.2050807569px;
 }
 .hex-item:first-child {
   z-index: 0;
@@ -456,7 +456,7 @@ textarea, label {
   position: absolute;
   top: 0;
   width: 100px;
-  height: 173.20508px;
+  height: 173.2050807569px;
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
   -ms-transform-origin: center center;
@@ -774,17 +774,20 @@ textarea, label {
 }
 
 .history-item {
-  display: table;
+  line-height: 14px;
   font-family: "Open Sans", sans-serif;
   padding-left: 32px;
+  padding-right: 16px;
   margin-bottom: 20px;
   width: 100%;
 }
-.history-item > * {
+.history-item .history-text {
   display: table-cell;
   vertical-align: middle;
 }
 .history-item .history-icon {
+  display: table-cell;
+  vertical-align: middle;
   padding-right: 25px;
   position: relative;
   width: 66px;
@@ -809,6 +812,11 @@ textarea, label {
   color: #aaaaaa;
   font-size: 12px;
 }
+.history-item .history-desc .history-desc-cell span {
+  display: block;
+  color: #aaaaaa;
+  font-size: 12px;
+}
 
 .history-hex {
   display: block;
@@ -827,12 +835,12 @@ textarea, label {
 }
 .history-hex::before {
   bottom: 100%;
-  border-bottom: 19.05px solid #293342;
+  border-bottom: 0px solid #293342;
 }
 .history-hex::after {
   top: 100%;
   width: 0;
-  border-top: 19.05px solid #293342;
+  border-top: 0px solid #293342;
 }
 
 .service-hex {
@@ -993,7 +1001,7 @@ textarea, label {
   position: absolute;
   top: 3.4641px;
   left: 0;
-  width: 158.0000px;
+  width: 158px;
   height: 91.2213px;
   z-index: 2;
   background: inherit;
@@ -1006,7 +1014,7 @@ textarea, label {
   height: 120.21px;
   overflow: hidden;
   background: inherit;
-  left: 18.90px;
+  left: 18.9px;
   -webkit-transform: scaleY(0.5774) rotate(-45deg);
   -moz-transform: scaleY(0.5774) rotate(-45deg);
   -ms-transform: scaleY(0.5774) rotate(-45deg);
@@ -1018,8 +1026,8 @@ textarea, label {
 .tm-hex .hexBottom::after {
   content: "";
   position: absolute;
-  width: 158.0000px;
-  height: 91.22134253196087px;
+  width: 158px;
+  height: 91.221342532px;
   background: inherit;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
@@ -1460,7 +1468,7 @@ textarea, label {
   }
 
   .pt-table,
-  .pt-tablecell {
+.pt-tablecell {
     display: block;
   }
 
@@ -1483,8 +1491,8 @@ textarea, label {
   }
 
   .page-home .hexagon-item:nth-last-child(1),
-  .page-home .hexagon-item:nth-last-child(2),
-  .page-home .hexagon-item:nth-last-child(3) {
+.page-home .hexagon-item:nth-last-child(2),
+.page-home .hexagon-item:nth-last-child(3) {
     -webkit-transform: rotate(30deg) translate(0px, 0px);
     -moz-transform: rotate(30deg) translate(0px, 0px);
     -ms-transform: rotate(30deg) translate(0px, 0px);
@@ -1593,3 +1601,5 @@ textarea, label {
     margin-right: 0;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
