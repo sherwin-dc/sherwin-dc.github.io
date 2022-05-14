@@ -4,7 +4,7 @@
         <!-- meta charset -->
         <meta charset="utf-8">
         <!-- site title -->
-        <title>Phantom | Personal Resume Template</title>
+        <title>Sherwin&ensp;&#x2B22;&ensp;Work History</title>
         <!-- meta description -->
         <meta name="description" content="">
         <!-- mobile viwport meta -->
@@ -72,42 +72,46 @@
                             <div class="col-xs-12">
                                 <ul class="filter list-inline">
                                     <li><a href="#" class="active" data-filter="*">All</a></li>
-                                    <li><a href="#" data-filter=".Photoshop">Photoshop</a></li>
-                                    <li><a href="#" data-filter=".Illustrator">Illustrator</a></li>
-                                    <li><a href="#" data-filter=".Indesign">Indesign</a></li>
-                                    <li><a href="#" data-filter=".Artworks">Artworks</a></li>
+                                    <li><a href="#" data-filter=".FPGA">FPGA</a></li>
+                                    <li><a href="#" data-filter=".Verilog">Verilog</a></li>
+                                    <li><a href="#" data-filter=".Cpp">C++</a></li>
+                                    <li><a href="#" data-filter=".Embedded">Embedded-Sys</a></li>
+                                    <li><a href="#" data-filter=".3dp">3D-Printing</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="row isotope-gutter">
-                            <div class="col-xs-12 col-sm-6 col-md-4 Photoshop Illustrator">
+                            <div class="col-xs-12 col-sm-6 col-md-4 FPGA Cpp Verilog Embedded">
                                 <figure class="works-item">
-                                    <img src="img/works/1.jpg" alt="">
-                                    <div class="overlay"></div>
+                                    <img src="img/works/mars-rover.png" alt="">
+                                    <a class="overlay" href="https://hackaday.com/2021/08/23/esp32-video-input-using-i2s/"></a>
                                     <figcaption class="works-inner">
-                                        <h4>Project Name</h4>
-                                        <p>Illustration, Digital Art</p>
+                                        <h4>Mars Rover</h4>
+                                        <p>As an extension to a college autonomous rover project, I sent processed images from an FPGA to a ESP32 using the I2S protocol, before sending it over the network to form a video stream. <br>
+                                            The video streaming implementation was designed to use few IO pins and minimal CPU procesing on the FPGA, ESP32 and Server and was featured in an article on <a href="https://hackaday.com/2021/08/23/esp32-video-input-using-i2s/">hackaday</a>. You may view the full details of the project on <a href="https://hackaday.io/project/181210-esp32-video-input">hackaday.io</a>.
+                                        </p>
                                     </figcaption>
                                 </figure>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 Illustrator">
+                            <div class="col-xs-12 col-sm-6 col-md-4 Cpp">
                                 <figure class="works-item">
-                                    <img src="img/works/2.jpg" alt="">
-                                    <div class="overlay"></div>
+                                    <img src="img/works/c-mips-compiler.png" alt="">
+                                    <a class="overlay" href="https://github.com/sherwin-dc/C-to-MIPS-Compiler#c90-to-mips-compiler"></a>
                                     <figcaption class="works-inner">
-                                        <h4>Project Name</h4>
-                                        <p>Illustration, Digital Art</p>
+                                        <h4>C to MIPS Compiler</h4>
+                                        <p>A C90 to MIPS1 compiler, written from scratch with ANTLR4 and C++. Passed 189/202 tests (93%).<br>
+                                        "Overall this is an exceptionally good compiler that is passing some very hard test cases such as 6-dimensional arrays and sizes of nested structs containing chars and doubles - Very impressive. " - Reviewer's feedback</p>
                                     </figcaption>
                                 </figure>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 Indesign Photoshop">
+                            <div class="col-xs-12 col-sm-6 col-md-4 Cpp Verilog">
                                 <figure class="works-item">
-                                    <img src="img/works/3.jpg" alt="">
+                                    <img src="img/works/mips-testbench.png" alt="">
                                     <div class="overlay"></div>
                                     <figcaption class="works-inner">
-                                        <h4>Project Name</h4>
-                                        <p>Illustration, Digital Art</p>
+                                        <h4>MIPS CPU & Testbench</h4>
+                                        <p>Used the Verilog Procedural Interface (VPI) to create a hybrid C++/Verilog testbench capable of testing a high volume of CPU instructions with on-the-fly generated tesstcaes.</p>
                                     </figcaption>
                                 </figure>
                             </div>

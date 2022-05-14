@@ -712,7 +712,10 @@ textarea, label {
   position: absolute;
   text-align: center;
   top: 50%;
+  padding: 20px;
+  width: 100%;
   white-space: nowrap;
+  pointer-events: none;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -729,6 +732,21 @@ textarea, label {
   text-transform: uppercase;
 }
 .works-item p {
+  white-space: pre-line;
+  line-height: 1.2;
+  width: 100%;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+}
+.works-item p a {
+  color: #FA6862;
+  pointer-events: all;
+}
+.works-item blockquote {
+  white-space: pre-line;
+  line-height: 1.2;
+  width: 100%;
   color: #fff;
   font-size: 12px;
   font-weight: 400;
