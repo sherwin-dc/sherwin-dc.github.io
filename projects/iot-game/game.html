@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <!-- meta charset -->
+        <meta charset="utf-8">
+        <!-- site title -->
+        <title>Phantom | Personal Resume Template</title>
+        <!-- meta description -->
+        <meta name="description" content="">
+        <!-- mobile viwport meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fevicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+        
+        <!-- ================================
+        CSS Files
+        ================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/themefisher-fonts.min.css">
+        <link rel="stylesheet" href="../../css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="stylesheet" href="../../css/dark.css">
+        <link id="color-changer" rel="stylesheet" href="../../css/colors/color-0.css">
+        <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+        <script src="node_modules/xterm/lib/xterm.js"></script>
+        <style>
+           
+            @font-face { 
+          font-family: "square"; 
+      
+              /* Not IE */
+              /* From: https://strlen.com/square/ , Creative Commons Attribution 3.0 Unported */
+              src: url('./square.ttf');
+              format("truetype");
+              /* Not IE */
+          }
+          </style>
+    </head>
+
+    <body class="dark">
+
+        <div class="preloader">
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+        </div>
+
+        <main class="site-wrapper">
+            <div class="pt-table">
+                <div class="pt-tablecell page-works relative">
+                    <!-- .close -->
+                    <a href="../works.html" class="page-close"><i class="tf-ion-close"></i></a>
+                    <!-- /.close -->
+
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="page-title text-center">
+                                    <h3>MIPS <span class="primary">Testbench</span> <span class="title-bg">Project</span></h3>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="emscripten_border" style="display:none">
+                                    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+                                </div>
+                                <textarea class="emscripten" id="ta" style="display:none"></textarea>
+                                
+                            <div class="frame" id="gamewrapper" style="border:1px solid black;">
+                                <div class="emscripten" id="output"></div>
+                            </div>
+                                
+                            <style>
+                                #output {
+                                    -webkit-transform-origin: 0 0;
+                                    transform-origin: 0 0;
+                                } 
+                            </style>
+                            <script>
+                                function rescale() {
+                                    var gameElem = document.getElementById("output");
+                                    var screenElem = document.getElementsByClassName("xterm-screen")[0];
+                                    var frameElem = document.getElementById("gamewrapper");
+                                    var ratio = frameElem.clientWidth / screenElem.clientWidth;
+                                    gameElem.style.transform = "scale(" + ratio + ")";
+                                    gameElem.style.webkitTransform = "scale(" + ratio + ")";
+                                    frameElem.style.cssText = "height: " + gameElem.clientHeight * ratio + "px";
+                                };
+                                visualViewport.onresize = rescale;
+                            </script>
+                              
+                                  
+                            </div>
+                        </div> 
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                    <h3><span class="primary">Overview</span></h3>
+                                    <p>This was a group project to design both
+                                        <li>A MIPS CPU using Verilog that implements 48 Arithmetic, Load-Store and Control Instructions</li>
+                                        <li>A testbench, that when given a Verilog design of a MIPS CPU, identifies which instruction was incorrectly implemented</li>
+                                    </p>
+                                    <p>My role was to design a testbench to test 36 
+                                        Arithmetic and Load-Store instructions.
+                                    </p>
+                                    <h3><span class="primary">Design Decisions</span></h3>
+                                    <p>
+                                        The testbench is expected to make memory available to the CPU using the Avalon memory protocol,
+                                        which will allow the CPU to access instructions from memory as well as
+                                        read and write data. The testbench also has access to the value of register v0 used to return
+                                        values (based on the MIPS C ABI). Hence the testbench may use both the return value and
+                                        memory contents to determine if an instruction was correctly implemented or not.
+                                    </p>
+                                    <p>
+                                        The general expectation for this coursework is that the tesstbench would be written in Verilog
+                                        and would instantiate the top level module of the CPU to run tests. However, this makes
+                                        writing individual tests cumbersome and limits how the tests can be written.
+                                    </p>
+                                    <p>
+                                        Hence, I decided to use the Verilog Procedural Interface (VPI) to allow my Verilog testbench to call
+                                        C++ code. This code is then compiled and later linked with the Verilog simulatior compiled by Icarus
+                                        Verilog.
+                                    </p>
+                                    <h3><span class="primary">Implementation</span></h3>
+                                    <img src="../img/projects/tb1.png" width="100%"><br><br>
+                                    <p> My testbench implements a virtual ram using a C++ hash map. This 
+                                        makes all 2<sup>28</sup> word addresses available to the CPU under 
+                                        test while minimizing resource usage, which would be 
+                                        difficult without VPI. 36 different testcases corresponding to 
+                                        each instruction being tested were written in C++. These are linked
+                                        one at a time with the rest of the testbench and run to test each instruction.
+                                        An oversimplified example of a testcase is shown below
+                                    </p>
+                                    <img src="../img/projects/tb1-testcase.png" width="100%"><br><br>
+                                    <p>
+                                        The code shown has an if else macro to either
+                                        inject MIPS inline assembly with the desired instruction,
+                                        or simply perform the operation with C code.
+                                    </p>
+                                    <p>
+                                        The code shown is actually run twice: Once on the CPU under
+                                        test with the inline assembly instructions, and once on the
+                                        host x86 machine running the testbench. Each writes to a separate
+                                        RAM which is then compared at the end to determine if the test passes.
+                                    </p>
+                                    <p>
+                                        In reality, each of the 36 arithmetic, load and store test 
+                                        cases tests each instruction with at least 10,000 unique 
+                                        values. These numbers are either generated on the fly 
+                                        using Fibonacci logic, or in the case of immediate 
+                                        values, are inserted during compilation. Edge cases are 
+                                        considered separately. Every test case makes the CPU 
+                                        execute between 30,000 and 164,000 instructions. 
+                                        Hence across the testbench, a total of 360,000 inline assembly 
+                                        instructions are executed, out of over 3.1 million 
+                                        instructions executed in total. 
+                                    </p>
+                                    <h3><span class="primary">Feedback</span></h3>
+                                    <span>Written Instructor Feedback:</span>
+                                    <blockquote>Approach to testing with VPI is very interesting, plus the sheer number of test cases was impressive (as a number). Makes the testing section stand out.</blockquote>
+                                    <span>Anonymous Peer Feedback:</span>
+                                    <blockquote>Takes initiative to organise meetings and set goals. Lots of effort put into his part of the work and conveys what he has done clearly to others. Willing to help out wherever needed promptly as well.</blockquote>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- <nav class="page-nav clear">
+                        <div class="container">
+                            <div class="flex flex-middle space-between">
+                                <span class="prev-page"><a href="index.html" class="link">&larr; Prev Page</a></span>
+                                <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                                <span class="next-page"><a href="about.html" class="link">Next Page &rarr;</a></span>
+                            </div>
+                        </div>
+                    </nav> -->
+                    <!-- /.container -->
+
+                </div> <!-- /.pt-tablecell -->
+            </div> <!-- /.pt-table -->
+        </main> <!-- /.site-wrapper -->
+        
+        <!-- ================================
+        JavaScript Libraries
+        ================================= -->
+        <script src="../../js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="../../js/vendor/bootstrap.min.js"></script>
+        <script src="../../js/jquery.easing.min.js"></script>
+        <script src="../../js/isotope.pkgd.min.js"></script>
+        <script src="../../js/jquery.nicescroll.min.js"></script>
+        <script src="../../js/owl.carousel.min.js"></script>
+        <script src="../../js/jquery-validation.min.js"></script>
+        <script src="../../js/form.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script type='text/javascript'>
+            var statusElement = document.getElementById('status');
+            var progressElement = document.getElementById('progress');
+            var spinnerElement = document.getElementById('spinner');
+      
+            const output = document.getElementById('output');
+            let term = new Terminal({ fontFamily: 'square' });
+            term.resize(160, 85);
+            term.open(output);
+            term.onKey(e => {
+              term.lastkey = e.key;
+            });
+            var readline = function() {
+                if (typeof term.lastkey == 'undefined') {
+                    return null;
+                } else {
+                    var lastkey = term.lastkey;
+                    term.lastkey = null;
+                    return lastkey;
+                }
+                
+            };
+      
+            var Module = {
+              preRun: [function() {
+      
+                ENV.TERM = 'xterm';
+      
+              }],
+              postRun: [],
+              print: (stdout) => term.write(stdout),
+              printErr: (stderr) => console.error('printErr:', stderr),
+      
+              canvas: (function() {
+                var canvas = document.getElementById('canvas');
+                // As a default initial behavior, pop up an alert when webgl context is lost. To make your
+                // application robust, you may want to override this behavior before shipping!
+                // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+                canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+                return canvas;
+              })(),
+      
+            };
+            
+          </script>
+          <script async type="text/javascript" src="game.js"></script>
+
+    </body>
+</html>
+
