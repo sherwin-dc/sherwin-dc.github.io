@@ -52,7 +52,7 @@
             <div class="pt-table">
                 <div class="pt-tablecell page-works relative">
                     <!-- .close -->
-                    <a href="../works.html" class="page-close"><i class="tf-ion-close"></i></a>
+                    <a href="../../../works.html" class="page-close"><i class="tf-ion-close"></i></a>
                     <!-- /.close -->
 
                     
@@ -60,10 +60,31 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
                                 <div class="page-title text-center">
-                                    <h3>MIPS <span class="primary">Testbench</span> <span class="title-bg">Project</span></h3>
+                                    <h3>IoT <span class="primary">Game</span> <span class="title-bg">Project</span></h3>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                    <h3><span class="primary">Overview</span></h3>
+                                    <p>This was a project to build a multiplayer game, using multiple FPGAs and a AWS Server.</p>
+                                    <p>Up to 6 players would have an FPGA, and control their character by tilting the FPGA, which has
+                                        a built in accelerometer. This informaation is relayed to the server, which sends the positions
+                                        of all players to their computers to be displayed. Players compete to be the first to find 
+                                        all the switches hidden throughout the map and complete short tasks on the FPGAs to activate 
+                                        them (See below for a video on how this looked like).
+                                    </p>
+
+                                    <h3><span class="primary">Gameplay</span></h3>
+                                    <p>Dont have an FPGA lying around? Fret not, as you now have the oppotunity to play the game right 
+                                        here on this webpage. Thanks to WebAssembly, I was able to compile this C++ game for use in your
+                                        browser, which was a mini project in itself. The game is single player only, and all you need to
+                                        do is find all the Switches (green 'S') on the map. Use the WASD or arrow keys to move, and pick 
+                                        up the red torches along the way to increase you field of vision.
+                                    </p>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -101,71 +122,10 @@
 
                         <div class="row">
                             <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-                                    <h3><span class="primary">Overview</span></h3>
-                                    <p>This was a group project to design both
-                                        <li>A MIPS CPU using Verilog that implements 48 Arithmetic, Load-Store and Control Instructions</li>
-                                        <li>A testbench, that when given a Verilog design of a MIPS CPU, identifies which instruction was incorrectly implemented</li>
-                                    </p>
-                                    <p>My role was to design a testbench to test 36 
-                                        Arithmetic and Load-Store instructions.
-                                    </p>
-                                    <h3><span class="primary">Design Decisions</span></h3>
-                                    <p>
-                                        The testbench is expected to make memory available to the CPU using the Avalon memory protocol,
-                                        which will allow the CPU to access instructions from memory as well as
-                                        read and write data. The testbench also has access to the value of register v0 used to return
-                                        values (based on the MIPS C ABI). Hence the testbench may use both the return value and
-                                        memory contents to determine if an instruction was correctly implemented or not.
-                                    </p>
-                                    <p>
-                                        The general expectation for this coursework is that the tesstbench would be written in Verilog
-                                        and would instantiate the top level module of the CPU to run tests. However, this makes
-                                        writing individual tests cumbersome and limits how the tests can be written.
-                                    </p>
-                                    <p>
-                                        Hence, I decided to use the Verilog Procedural Interface (VPI) to allow my Verilog testbench to call
-                                        C++ code. This code is then compiled and later linked with the Verilog simulatior compiled by Icarus
-                                        Verilog.
-                                    </p>
-                                    <h3><span class="primary">Implementation</span></h3>
-                                    <img src="../img/projects/tb1.png" width="100%"><br><br>
-                                    <p> My testbench implements a virtual ram using a C++ hash map. This 
-                                        makes all 2<sup>28</sup> word addresses available to the CPU under 
-                                        test while minimizing resource usage, which would be 
-                                        difficult without VPI. 36 different testcases corresponding to 
-                                        each instruction being tested were written in C++. These are linked
-                                        one at a time with the rest of the testbench and run to test each instruction.
-                                        An oversimplified example of a testcase is shown below
-                                    </p>
-                                    <img src="../img/projects/tb1-testcase.png" width="100%"><br><br>
-                                    <p>
-                                        The code shown has an if else macro to either
-                                        inject MIPS inline assembly with the desired instruction,
-                                        or simply perform the operation with C code.
-                                    </p>
-                                    <p>
-                                        The code shown is actually run twice: Once on the CPU under
-                                        test with the inline assembly instructions, and once on the
-                                        host x86 machine running the testbench. Each writes to a separate
-                                        RAM which is then compared at the end to determine if the test passes.
-                                    </p>
-                                    <p>
-                                        In reality, each of the 36 arithmetic, load and store test 
-                                        cases tests each instruction with at least 10,000 unique 
-                                        values. These numbers are either generated on the fly 
-                                        using Fibonacci logic, or in the case of immediate 
-                                        values, are inserted during compilation. Edge cases are 
-                                        considered separately. Every test case makes the CPU 
-                                        execute between 30,000 and 164,000 instructions. 
-                                        Hence across the testbench, a total of 360,000 inline assembly 
-                                        instructions are executed, out of over 3.1 million 
-                                        instructions executed in total. 
-                                    </p>
-                                    <h3><span class="primary">Feedback</span></h3>
-                                    <span>Written Instructor Feedback:</span>
-                                    <blockquote>Approach to testing with VPI is very interesting, plus the sheer number of test cases was impressive (as a number). Makes the testing section stand out.</blockquote>
-                                    <span>Anonymous Peer Feedback:</span>
-                                    <blockquote>Takes initiative to organise meetings and set goals. Lots of effort put into his part of the work and conveys what he has done clearly to others. Willing to help out wherever needed promptly as well.</blockquote>
+                                <br>
+                                    <h3><span class="primary">Original Gameplay</span></h3>
+                                    <p>This was the original game when played with an FPGA:</p>
+                                    <video src="../../img/projects/iot-game.mp4" autoplay loop controls style="width:100%"></video>
                             </div>
                         </div>
                     </div> 
