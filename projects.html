@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <!-- meta charset -->
+        <meta charset="utf-8">
+        <!-- site title -->
+        <title>Sherwin&ensp;&#x2B22;&ensp;Work History</title>
+        <!-- meta description -->
+        <meta name="description" content="">
+        <!-- mobile viwport meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fevicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        
+        <!-- ================================
+        CSS Files
+        ================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="css/themefisher-fonts.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/dark.css">
+        <link id="color-changer" rel="stylesheet" href="css/colors/color-0.css">
+    </head>
+
+    <body class="dark">
+
+        <div class="preloader">
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+        </div>
+
+        <!-- <div class="preview-wrapper">
+            <div class="switcher-head">
+                <span>Style Switcher</span>
+                <div class="switcher-trigger tf-tools"></div>
+            </div>
+
+            <div class="switcher-body">
+                <h4>Choose Color:</h4>
+                <ul class="color-options list-none">
+                    <li class="c0" data-color="color-0" title="Default">Default</li>
+                    <li class="c1" data-color="color-1" title="Red">Red</li>
+                    <li class="c2" data-color="color-2" title="Green">Green</li>
+                    <li class="c3" data-color="color-3" title="Blue">Blue</li>
+                </ul>
+            </div>
+        </div> -->
+
+        <main class="site-wrapper">
+            <div class="pt-table">
+                <div class="pt-tablecell page-works relative">
+                    <!-- .close -->
+                    <a href="./" class="page-close"><i class="tf-ion-close">    </i></a>
+                    <!-- /.close -->
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="page-title text-center">
+                                    <h2>My <span class="primary">projects</span> <span class="title-bg">projects</span></h2>
+                                    <p><i>Hover</i> over each tile to read a short description of the project<br>
+                                    <i>Click</i> on each tile to learn more about the project</p>
+                                </div>
+                            </div>                            
+                        </div> <!-- /.row -->
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="filter list-inline">
+                                    <li><a href="#" class="active" data-filter="*">All</a></li>
+                                    <li><a href="#" data-filter=".Verilog">Verilog</a></li>
+                                    <li><a href="#" data-filter=".Cpp">C++</a></li>
+                                    <li><a href="#" data-filter=".FPGA">FPGA</a></li>                                   
+                                    <li><a href="#" data-filter=".Embedded">Embedded-Sys</a></li>
+                                    <li><a href="#" data-filter=".3dp">3D-Printing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row isotope-gutter">
+                            <div class="col-xs-12 col-sm-6 col-md-4 FPGA Cpp Verilog Embedded">
+                                <figure class="works-item">
+                                    <img src="img/works/mars-rover.png" alt="">
+                                    <a class="overlay" href="https://hackaday.com/2021/08/23/esp32-video-input-using-i2s/"></a>
+                                    <figcaption class="works-inner">
+                                        <h4>Mars Rover</h4>
+                                        <p>As an extension to a college autonomous rover project, I sent processed images from an FPGA to a ESP32 using the I2S protocol, before sending it over the network to form a video stream. <br>
+                                            The video streaming implementation was designed to use few IO pins and minimal CPU procesing on the FPGA, ESP32 and Server and was featured in an article on <a href="https://hackaday.com/2021/08/23/esp32-video-input-using-i2s/">hackaday</a>. You may view the full details of the project on <a href="https://hackaday.io/project/181210-esp32-video-input">hackaday.io</a>.
+                                        </p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 Cpp">
+                                <figure class="works-item">
+                                    <img src="img/works/c-mips-compiler.png" alt="">
+                                    <a class="overlay" href="https://github.com/sherwin-dc/C-to-MIPS-Compiler#c90-to-mips-compiler"></a>
+                                    <figcaption class="works-inner">
+                                        <h4>C to MIPS Compiler</h4>
+                                        <p>A C90 to MIPS1 compiler, written from scratch with ANTLR4 and C++. Passed 189/202 tests (93%).<br>
+                                        "Overall this is an exceptionally good compiler that is passing some very hard test cases such as 6-dimensional arrays and sizes of nested structs containing chars and doubles - Very impressive. " - Reviewer's feedback</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 Cpp Verilog">
+                                <figure class="works-item">
+                                    <img src="img/works/mips-testbench.png" alt="">
+                                    <a class="overlay" href="./projects/mips-tb.html"></a>
+                                    <figcaption class="works-inner">
+                                        <h4>MIPS CPU & Testbench</h4>
+                                        <p>Used the Verilog Procedural Interface (VPI) to create a hybrid C++/Verilog testbench capable of testing a high volume of CPU instructions with on-the-fly generated tesstcaes.</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 Cpp FPGA">
+                                <figure class="works-item">
+                                    <img src="img/works/iot-game.gif" alt="">
+                                    <a class="overlay" href="./projects/iot-game/game.html"></a>
+                                    <figcaption class="works-inner">
+                                        <h4>FPGA Multiplayer Game</h4>
+                                        <p>An online multiplayer game using FPGAs to send commands to an AWS server, with the game displayed on each player's screen.</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <figure class="works-item">
+                                    <img src="img/works/ewb.png" alt="">
+                                    <a class="overlay" href="./projects/ewb-challenge.html"></a>
+                                    <figcaption class="works-inner">
+                                        <h4>Design Challenge</h4>
+                                        <p>Took part in a design challenge to improve the lives of a remote community in Peru. My team and I came up with an implementation plan for hosting an intranet and local database to give residents access to information and useful applications.</p>
+                                </figure>
+                            </div>
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+
+                    <!-- <nav class="page-nav clear">
+                        <div class="container">
+                            <div class="flex flex-middle space-between">
+                                <span class="prev-page"><a href="resume.html" class="link">&larr; Prev Page</a></span>
+                                <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                                <span class="next-page"><a href="testimonials.html" class="link">Next Page &rarr;</a></span>
+                            </div>
+                        </div>
+                    </nav> -->
+                    <!-- /.container -->
+
+                </div> <!-- /.pt-tablecell -->
+            </div> <!-- /.pt-table -->
+        </main> <!-- /.site-wrapper -->
+        
+        <!-- ================================
+        JavaScript Libraries
+        ================================= -->
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery-validation.min.js"></script>
+        <script src="js/form.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
