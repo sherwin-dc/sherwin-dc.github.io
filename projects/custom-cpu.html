@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <!-- meta charset -->
+        <meta charset="utf-8">
+        <!-- site title -->
+        <title>Phantom | Personal Resume Template</title>
+        <!-- meta description -->
+        <meta name="description" content="">
+        <!-- mobile viwport meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fevicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        
+        <!-- ================================
+        CSS Files
+        ================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="../css/themefisher-fonts.min.css">
+        <link rel="stylesheet" href="../css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/dark.css">
+        <link id="color-changer" rel="stylesheet" href="../css/colors/color-0.css">
+    </head>
+
+    <body class="dark">
+
+        <div class="preloader">
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+        </div>
+
+        <main class="site-wrapper">
+            <div class="pt-table">
+                <div class="pt-tablecell page-works relative">
+                    <!-- .close -->
+                    <a href="../projects.html" class="page-close"><i class="tf-ion-close"></i></a>
+                    <!-- /.close -->
+
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="page-title text-center">
+                                    <h3>Custom ISA <span class="primary">CPU</span> <span class="title-bg">Project</span></h3>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                    <h3><span class="primary">Overview</span></h3>
+                                    <p>This was a group project in a team of three, where we were given three snippets of C code:
+                                        <ul>A recursive fibonacci generator function</ul>
+                                        <ul>A random number generator (Linear Congruential Generator)</ul>
+                                        <ul>A linked-list traversal function</ul>
+                                    </p>
+                                    </p>We were tasked to design an ISA and CPU that efficiently perform the same tasks defined in the 3 functions
+                                    above. The CPU would be designed and simulated in Intel Quartus Prime to target an Altera FPGA.
+                                    <p>
+                                    </p>
+                                    <h3><span class="primary">Design</span></h3>
+                                    <p>
+                                        In this project I had focused on analyzing the recursive fibonacci function and making our custom CPU
+                                        execute it efficiently. Seeing that this function involves a large number of recursive calls to
+                                        itself, I took inspiration from the SPARC architecture to design the CPU with a large register file 
+                                        and movable register window.
+                                    </p>
+                                    <p>
+                                        SPARC CPUs usually have hundreds of registers, with only 32 being made visible to the program through
+                                        a register widow. When a function call is made, arguments are placed by the caller on the bottom of the
+                                        register window, which then moves down by a certain amount during the function call such that these arguments
+                                        appear at the top. This is then replaced with the return value by the callee, before the window moves back up
+                                        when the function returns. (See the below video for a demonstration of how this works)
+                                    </p>
+                                    <p>
+                                        I decided to use a register file with 128 registers, with a window size of 8. This would be accompanies by an
+                                        ISA that supports 8 registers, as well as `call` and `rtn` instructions that move the register window up or down
+                                        by a specified amount. I believe SPARC could have done better by allowing the programmer to specify how much 
+                                        the window should move up/down by, which would allow a compiler to optimize for maximum depth of function calls
+                                        before spilling registers to memory, assuming less registers are needed per function.
+                                    </p>
+                                    <p>
+                                        After synthesizing the CPU for the FPGA, I found that the critical path was included reading values from the
+                                        register file, because several layers of muxes were needed to select the correct registers.  This was limiting
+                                        the maximum clock speed and hence I decided to add a small (L-1?) cache just for these 8 registers that are updated
+                                        whenever a register is written to or when the register window moves. Admittedly this design may not be the most
+                                        friendly to synthesize, with the register file looking as follows:
+                                    </p>
+                                    <img src="../img/projects/register-file.jpg" width="100%">
+                                    <br><br>
+                                    <p>
+                                        Nevertheless the design is efficient in running this snippet of code. I found that it uses less instructions to
+                                        calculate a fibonacci number compared to arm CPU (tested on a Raspberry Pi 3). This is also shown in the following 
+                                        video where I briefly explain how the movable register window works in our CPU, and give a short 
+                                        demonstration of it being used when calling a recursive function.
+                                        
+                                    </p>
+                                    <video src="../img/projects/stack-video.mp4" controls style="width:100%"></video>
+                                    
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- <nav class="page-nav clear">
+                        <div class="container">
+                            <div class="flex flex-middle space-between">
+                                <span class="prev-page"><a href="index.html" class="link">&larr; Prev Page</a></span>
+                                <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                                <span class="next-page"><a href="about.html" class="link">Next Page &rarr;</a></span>
+                            </div>
+                        </div>
+                    </nav> -->
+                    <!-- /.container -->
+
+                </div> <!-- /.pt-tablecell -->
+            </div> <!-- /.pt-table -->
+        </main> <!-- /.site-wrapper -->
+        
+        <!-- ================================
+        JavaScript Libraries
+        ================================= -->
+        <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../js/jquery.easing.min.js"></script>
+        <script src="../js/isotope.pkgd.min.js"></script>
+        <script src="../js/jquery.nicescroll.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/jquery-validation.min.js"></script>
+        <script src="../js/form.min.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
