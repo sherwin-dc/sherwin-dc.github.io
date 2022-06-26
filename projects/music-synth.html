@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <!-- meta charset -->
+        <meta charset="utf-8">
+        <!-- site title -->
+        <title>Phantom | Personal Resume Template</title>
+        <!-- meta description -->
+        <meta name="description" content="">
+        <!-- mobile viwport meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- fevicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        
+        <!-- ================================
+        CSS Files
+        ================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="../css/themefisher-fonts.min.css">
+        <link rel="stylesheet" href="../css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/dark.css">
+        <link id="color-changer" rel="stylesheet" href="../css/colors/color-0.css">
+    </head>
+
+    <body class="dark">
+
+        <div class="preloader">
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+            <div class="loading-mask"></div>
+        </div>
+
+        <main class="site-wrapper">
+            <div class="pt-table">
+                <div class="pt-tablecell page-works relative">
+                    <!-- .close -->
+                    <a href="../projects.html" class="page-close"><i class="tf-ion-close"></i></a>
+                    <!-- /.close -->
+
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                <div class="page-title text-center">
+                                    <h3>Music <span class="primary">Synthesizer</span> <span class="title-bg">Project</span></h3>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                                    <h3><span class="primary">Overview</span></h3>
+                                    <p>This was a group project in an embedded systems module, where we were given an STM32 and 'piano boards' that were built
+                                        by the department and tasked to program them to create a music synthesizer.
+                                    </p>
+                                    <h3><span class="primary">Design</span></h3>
+                                    <p>
+                                        The board provided (shown below) included a set of standard piano keys, four knobs that can be pressed and
+                                        a joystick. These were connected to specific pins on the STM32 with pinout diagrams provided. All students were
+                                        given demo Arduino code for the microcontroller to recognize key presses, and expected to use FreeRTOS for task
+                                        scheduling.
+                                    </p>
+                                    <p>
+                                        For this project I suggested using STMCube to program the microcontroller, which would allow advanced hardware features
+                                        to be used such as DMA and timers. For this project I worked on the UI, setting up the u8g2 library to use HAL functions
+                                        to output to the display and assigning timers and DMA controllers as needed.
+                                    </p>
+                                    <h3><span class="primary">Demonstration</span></h3>
+                                    <p>
+                                        The following video, narrated by a team member, shows the working synthesizer board.
+                                    </p>
+                                    <video src="../img/projects/music-synth-demo.mp4" controls style="width:100%"></video>
+                                    <h3><span class="primary">Extension</span></h3>
+                                    <p>
+                                        As an extension to the project, I added a feature to record sound on the board and send the recording to the computer. 
+                                        This was done by converting each discrete sample point to an 8-bit 'char' and sending it out through USART to a python 
+                                        script that creates a WAV file. 
+                                    </p>
+
+                                    <video src="../img/projects/music-synth-record.mp4" controls style="width:100%"></video>
+
+                                    <h3><span class="primary">Feedback</span></h3>
+                                    <span>Written Instructor Feedback:</span>
+                                    <blockquote>This implementation shows an excellent understanding of microcontroller programming by working with the STM32 HAL to configure and use peripherals at a low level, including the DMA. The additional features make very nice sounds and the user interface is neat.</blockquote>
+                                    
+                                    
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- <nav class="page-nav clear">
+                        <div class="container">
+                            <div class="flex flex-middle space-between">
+                                <span class="prev-page"><a href="index.html" class="link">&larr; Prev Page</a></span>
+                                <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                                <span class="next-page"><a href="about.html" class="link">Next Page &rarr;</a></span>
+                            </div>
+                        </div>
+                    </nav> -->
+                    <!-- /.container -->
+
+                </div> <!-- /.pt-tablecell -->
+            </div> <!-- /.pt-table -->
+        </main> <!-- /.site-wrapper -->
+        
+        <!-- ================================
+        JavaScript Libraries
+        ================================= -->
+        <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../js/jquery.easing.min.js"></script>
+        <script src="../js/isotope.pkgd.min.js"></script>
+        <script src="../js/jquery.nicescroll.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/jquery-validation.min.js"></script>
+        <script src="../js/form.min.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
