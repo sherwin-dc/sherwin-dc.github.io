@@ -60,33 +60,10 @@
 	function contactFormValidation() {
 		$(".contact-form").validate({
 		    rules: {
-		        name: {
-		            required: true
-		        },
-		        email: {
-		            required: true,
-		            email: true
-		        },
-		        subject: {
-		            required: true
-		        },
-		        message: {
-		            required: true
-		        }
+		        
 		    },
 		    messages: {
-		        name: {
-		            required: "Name field is blank"
-		        },
-		        email: {
-		            required: "Email field is blank"
-		        },
-		        subject: {
-		            required: "Subject field is blank"
-		        },
-		        message: {
-		            required: "Message field is blank"
-		        }
+		        
 		    },
 		    submitHandler: function(form) {
 		        $(form).ajaxSubmit({
