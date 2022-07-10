@@ -605,7 +605,6 @@ textarea, label {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 1px;
   margin-bottom: 4px;
-  text-transform: uppercase;
 }
 .about-author .author-desc b {
   font-family: "Open Sans", sans-serif;
@@ -615,7 +614,7 @@ textarea, label {
   background-color: #1e2530;
   border-radius: 2px;
   height: auto;
-  min-height: 45px;
+  min-height: 60px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
@@ -634,10 +633,10 @@ textarea, label {
   letter-spacing: 1px;
 }
 .progress .skill-name {
-  border-right: 2px solid #2e333a;
   min-width: 160px;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
+  margin: 0 15px;
 }
 .progress .skill-bar {
   background-color: #07080b;

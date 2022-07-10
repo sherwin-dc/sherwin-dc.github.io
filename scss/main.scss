@@ -174,7 +174,7 @@
 	background-color: $light-dark;
 	border-radius: 2px;
 	height: auto;
-	min-height: 45px;
+	min-height: 60px;
 	@include align-items(center);
 	@include flexbox();
 	& > div {
@@ -184,10 +184,10 @@
 		letter-spacing: 1px;
 	}
 	.skill-name {
-		border-right: 2px solid #2e333a;
 		min-width: 160px;
-		text-align: center;
+		text-align: left;
 		text-transform: uppercase;
+        margin: 0 15px;
 	}
 	.skill-bar {
 		background-color: #07080b;
