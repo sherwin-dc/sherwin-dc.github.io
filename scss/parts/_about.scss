@@ -7,7 +7,7 @@
 	@include align-items(center);
 	@include flexbox();
 	.author-thumb {
-	  	background-color: $light;
+	  	background-color: rgba(255, 255, 255, 0);
 	  	border: 5px solid $light-dark;
 	  	margin-right: 30px;
 	  	padding: 5px;
